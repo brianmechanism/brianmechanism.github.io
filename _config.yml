@@ -15,7 +15,7 @@ title                    : "BrianMechanism"
 title_separator          : "-"
 subtitle                 : "Cheapest Large Scale Fixed Robotics"
 name                     : &name "Brian Onang'o" # &name is a YAML anchor which can be *referenced later
-description              : &description "The cheapest way to build large scale agricultural and industrial fixed robots for use in africa."
+description              : &description "Brian mechanisms is a robotics company in Kenya that offers the cheapest way to build agricultural robots for farm mechanisms and other consumer robots."
 startyear                : &startyear "2017"
 copyright                : &copyright "CSECO"
 copyrightsite            : &copyrightsite "https://www.cseco.co.ke"

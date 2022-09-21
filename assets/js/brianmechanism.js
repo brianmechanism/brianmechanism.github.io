@@ -868,6 +868,332 @@ class BrianMechanismSimulator {
         return spring
     }
 
+
+    jointconcept(){
+        BABYLON.SceneLoader.Append("/assets/wrl/jointconcept/", "YAxis.obj", this.scene,  (scene) =>{
+         scene.createDefaultCameraOrLight(true, true, true);
+            scene.activeCamera.alpha += Math.PI;
+            let yAxis = scene.meshes.slice(-1)[0]
+
+            let scaling = 1000;
+            yAxis.scaling.x = scaling
+            yAxis.scaling.y = scaling
+            yAxis.scaling.z = scaling
+            yAxis.rotation.x = Math.PI
+            yAxis.position.y = 0
+            yAxis.createNormals(false)
+            yAxis.setEnabled(true);
+
+
+
+            BABYLON.SceneLoader.Append("/assets/wrl/jointconcept/", "YAxisDisc.obj", this.scene,  (scene) =>{
+                scene.createDefaultCameraOrLight(true, true, true);
+                   scene.activeCamera.alpha += Math.PI;
+                   let yAxisDisc = scene.meshes.slice(-1)[0]
+       
+                   let scaling = 1000;
+                   yAxisDisc.scaling.x = scaling
+                   yAxisDisc.scaling.y = scaling
+                   yAxisDisc.scaling.z = scaling
+                   yAxisDisc.rotation.x = Math.PI
+                   yAxisDisc.position.x = 0
+                   yAxisDisc.position.y = 0 + 45
+                   yAxisDisc.position.z = 0
+                   yAxisDisc.createNormals(false)
+                   yAxisDisc.setEnabled(true);
+
+                   let yAxisComponents = new BABYLON.TransformNode();
+                   yAxisDisc.parent = yAxisComponents
+                   yAxisComponents.setPivotPoint(new BABYLON.Vector3(0, yAxisDisc.position.y, 0))
+
+                   BABYLON.SceneLoader.Append("/assets/wrl/jointconcept/", "ZAxis.obj", this.scene,  (scene) =>{
+                    scene.createDefaultCameraOrLight(true, true, true);
+                       scene.activeCamera.alpha += Math.PI;
+                       let zAxis = scene.meshes.slice(-1)[0]
+                
+                       let scaling = 1000;
+                       zAxis.scaling.x = scaling
+                       zAxis.scaling.y = scaling
+                       zAxis.scaling.z = scaling
+                       zAxis.rotation.y = Math.PI/2
+                       zAxis.position.x = 0
+                       zAxis.position.y = 0 + 45
+                       zAxis.position.z = 0
+                       zAxis.createNormals(false)
+                       zAxis.setEnabled(true);
+
+                       let zAxisComponents = new BABYLON.TransformNode();
+                       zAxis.parent = zAxisComponents
+                       zAxisComponents.setPivotPoint(new BABYLON.Vector3(0, zAxis.position.y, 0))
+                       zAxisComponents.parent = yAxisComponents
+
+                       BABYLON.SceneLoader.Append("/assets/wrl/jointconcept/", "XAxis.obj", this.scene,  (scene) =>{
+                        scene.createDefaultCameraOrLight(true, true, true);
+                           scene.activeCamera.alpha += Math.PI;
+                           let xAxis = scene.meshes.slice(-1)[0]
+                    
+                           let scaling = 1000;
+                           xAxis.scaling.x = scaling
+                           xAxis.scaling.y = scaling
+                           xAxis.scaling.z = scaling
+                        //    xAxis.rotation.y = Math.PI/2
+                           xAxis.position.x = 0
+                           xAxis.position.y = 0 + 45
+                           xAxis.position.z = 0
+                           xAxis.createNormals(false)
+                           xAxis.setEnabled(true);
+
+                           let xAxisComponents = new BABYLON.TransformNode();
+                        xAxis.parent = xAxisComponents
+                       xAxisComponents.parent = zAxisComponents
+
+                        //    setInterval(()=>{
+                        //     zAxis.rotation.y += Math.PI
+                        //     console.log(zAxis.rotation.y)
+                        //    },500)
+
+
+                            let simulate = true;
+
+                           if (simulate) {
+                            let thetaMin = -150, thetaMax = 150, theta = thetaMin
+                            let interval = 5
+                            // theta = 61
+                            let tmp /*this.intervals["chain1"]*/ = setInterval(() => {
+                                // options.theta0 = theta
+                                // // this.createChain(options, chainLinks)
+                                // this.positionLinks_test(options, chainPoints, chainLinks)
+                                theta += interval
+                                if (theta === thetaMax) interval *= -1
+                                if (theta === thetaMin) interval *= -1
+                                yAxisComponents.rotation.z = degree2Pi(theta)
+                                zAxisComponents.rotation.x = degree2Pi(theta)
+                                xAxisComponents.rotation.y = degree2Pi(theta)
+                            }, 100)
+                        }
+                       });
+                   });
+               });
+        });
+
+        
+    }
+
+    wheeledwalker(){
+        let oldScenesLen = this.scene.meshes.length
+        let scaling = 1000;
+        let frameComponents = new BABYLON.TransformNode();
+        BABYLON.SceneLoader.Append("/assets/wrl/wheeledWalker/", "completeframe.obj", this.scene,  (scene) =>{
+         scene.createDefaultCameraOrLight(true, true, true);
+            scene.activeCamera.alpha += Math.PI;
+           
+           
+            
+            // zAxisComponents.setPivotPoint(new BABYLON.Vector3(0, zAxis.position.y, 0))
+            // zAxisComponents.parent = yAxisComponents
+
+            let newScenesLen = this.scene.meshes.length
+            for (let i = oldScenesLen; i<newScenesLen; i++){
+                let completeframe = scene.meshes[i]
+                
+            
+                completeframe.scaling.x = scaling
+                completeframe.scaling.y = scaling
+                completeframe.scaling.z = scaling
+                // completeframe.rotation.x = Math.PI
+                completeframe.position.y = 0
+                completeframe.createNormals(false)
+                completeframe.setEnabled(true);
+                completeframe.parent = frameComponents
+    
+            }
+
+             oldScenesLen = this.scene.meshes.length
+             let r=500/2
+            BABYLON.SceneLoader.Append("/assets/wrl/wheeledWalker/", "wheel.obj", this.scene,  (scene) =>{
+                scene.createDefaultCameraOrLight(true, true, true);
+                   scene.activeCamera.alpha += Math.PI;
+                    newScenesLen = this.scene.meshes.length
+
+                    let wheelComponents = new BABYLON.TransformNode();
+            
+                    
+                    // zAxisComponents.parent = yAxisComponents
+                   for (let i = oldScenesLen; i<newScenesLen; i++){
+                       let wheel = scene.meshes[i]
+                //    let wheel = scene.meshes.slice(-1)[0]
+       
+                   wheel.scaling.x = scaling
+                   wheel.scaling.y = scaling
+                   wheel.scaling.z = scaling
+                //    wheel.rotation.x = Math.PI
+                //    wheel.rotation.y = Math.PI
+                   
+                   wheel.position.x = -(Math.PI * r) //PI * r
+                //    wheel.position.y = 0 + 45
+                //    wheel.position.z = 0
+                   wheel.createNormals(false)
+                   wheel.setEnabled(true);
+
+                   wheelComponents.setPivotPoint(new BABYLON.Vector3(-Math.PI * r,0, 0))
+                   wheel.parent = wheelComponents
+                   }
+
+                //    wheelComponents.scaling.x = scaling
+                //    wheelComponents.scaling.y = scaling
+                //    wheelComponents.scaling.z = scaling
+                   wheelComponents.rotation.x = -Math.PI
+                   wheelComponents.rotation.y = Math.PI
+                //    wheelComponents.rotation.z = -Math.PI
+
+
+
+
+                                    let simulate = true;
+    
+                           if (simulate) {
+                            let thetaMin = -0, thetaMax = 360, theta = thetaMin
+                            let interval = 5
+                            // theta = 61
+                            let action="legforward"
+                            let tmp /*this.intervals["chain1"]*/ = setInterval(() => {
+                               switch(action){
+                                case "legforward":
+                                        theta += interval
+                                        wheelComponents.position.x -=( 2 * Math.PI * r *- interval/360)
+                                        wheelComponents.rotation.z = degree2Pi(-theta)
+                                        if (theta === thetaMax) action="bodyforward"
+                                        break;
+                               case "bodyforward":
+                                        theta -= interval
+                                        frameComponents.position.x -=( 2 * Math.PI * r *- interval/360)
+                                        // wheelComponents.rotation.z = degree2Pi(-theta)
+                                        if (theta === thetaMin) action="bodybackward"
+                                        break;
+
+                                        case "bodybackward":
+                                            theta += interval
+                                            frameComponents.position.x +=( 2 * Math.PI * r *- interval/360)
+                                            // wheelComponents.rotation.z = degree2Pi(-theta)
+                                            if (theta === thetaMax) action="legbackward"
+                                            break;
+                                            case "legbackward":
+                                        theta -= interval
+                                        wheelComponents.position.x +=( 2 * Math.PI * r *- interval/360)
+                                        wheelComponents.rotation.z = degree2Pi(-theta)
+                                        if (theta === thetaMin) action="legforward"
+                               }
+                            }, 100)
+                        }
+
+    
+                //    let yAxisComponents = new BABYLON.TransformNode();
+                //    wheel.parent = yAxisComponents
+                //    yAxisComponents.setPivotPoint(new BABYLON.Vector3(0, wheel.position.y, 0))
+})
+
+
+            //loadwheel
+
+            //move the system...
+
+            // a more complicated system...
+
+
+
+            // BABYLON.SceneLoader.Append("/assets/wrl/jointconcept/", "yaxisdisc.obj", this.scene,  (scene) =>{
+            //     scene.createDefaultCameraOrLight(true, true, true);
+            //        scene.activeCamera.alpha += Math.PI;
+            //        let yAxisDisc = scene.meshes.slice(-1)[0]
+       
+            //        let scaling = 1000;
+            //        yAxisDisc.scaling.x = scaling
+            //        yAxisDisc.scaling.y = scaling
+            //        yAxisDisc.scaling.z = scaling
+            //        yAxisDisc.rotation.x = Math.PI
+            //        yAxisDisc.position.x = 0
+            //        yAxisDisc.position.y = 0 + 45
+            //        yAxisDisc.position.z = 0
+            //        yAxisDisc.createNormals(false)
+            //        yAxisDisc.setEnabled(true);
+    
+            //        let yAxisComponents = new BABYLON.TransformNode();
+            //        yAxisDisc.parent = yAxisComponents
+            //        yAxisComponents.setPivotPoint(new BABYLON.Vector3(0, yAxisDisc.position.y, 0))
+    
+            //        BABYLON.SceneLoader.Append("/assets/wrl/jointconcept/", "ZAxis.obj", this.scene,  (scene) =>{
+            //         scene.createDefaultCameraOrLight(true, true, true);
+            //            scene.activeCamera.alpha += Math.PI;
+            //            let zAxis = scene.meshes.slice(-1)[0]
+                
+            //            let scaling = 1000;
+            //            zAxis.scaling.x = scaling
+            //            zAxis.scaling.y = scaling
+            //            zAxis.scaling.z = scaling
+            //            zAxis.rotation.y = Math.PI/2
+            //            zAxis.position.x = 0
+            //            zAxis.position.y = 0 + 45
+            //            zAxis.position.z = 0
+            //            zAxis.createNormals(false)
+            //            zAxis.setEnabled(true);
+    
+            //            let zAxisComponents = new BABYLON.TransformNode();
+            //            zAxis.parent = zAxisComponents
+            //            zAxisComponents.setPivotPoint(new BABYLON.Vector3(0, zAxis.position.y, 0))
+            //            zAxisComponents.parent = yAxisComponents
+    
+            //            BABYLON.SceneLoader.Append("/assets/wrl/jointconcept/", "xAxis.obj", this.scene,  (scene) =>{
+            //             scene.createDefaultCameraOrLight(true, true, true);
+            //                scene.activeCamera.alpha += Math.PI;
+            //                let xAxis = scene.meshes.slice(-1)[0]
+                    
+            //                let scaling = 1000;
+            //                xAxis.scaling.x = scaling
+            //                xAxis.scaling.y = scaling
+            //                xAxis.scaling.z = scaling
+            //             //    xAxis.rotation.y = Math.PI/2
+            //                xAxis.position.x = 0
+            //                xAxis.position.y = 0 + 45
+            //                xAxis.position.z = 0
+            //                xAxis.createNormals(false)
+            //                xAxis.setEnabled(true);
+    
+            //                let xAxisComponents = new BABYLON.TransformNode();
+            //             xAxis.parent = xAxisComponents
+            //            xAxisComponents.parent = zAxisComponents
+    
+            //             //    setInterval(()=>{
+            //             //     zAxis.rotation.y += Math.PI
+            //             //     console.log(zAxis.rotation.y)
+            //             //    },500)
+    
+    
+            //                 let simulate = true;
+    
+            //                if (simulate) {
+            //                 let thetaMin = -150, thetaMax = 150, theta = thetaMin
+            //                 let interval = 5
+            //                 // theta = 61
+            //                 let tmp /*this.intervals["chain1"]*/ = setInterval(() => {
+            //                     // options.theta0 = theta
+            //                     // // this.createChain(options, chainLinks)
+            //                     // this.positionLinks_test(options, chainPoints, chainLinks)
+            //                     theta += interval
+            //                     if (theta === thetaMax) interval *= -1
+            //                     if (theta === thetaMin) interval *= -1
+            //                     yAxisComponents.rotation.z = degree2Pi(theta)
+            //                     zAxisComponents.rotation.x = degree2Pi(theta)
+            //                     xAxisComponents.rotation.y = degree2Pi(theta)
+            //                 }, 100)
+            //             }
+            //            });
+            //        });
+            //    });
+        });
+    
+        
+    }
+
     init(elem, simulationType) {
         let children = elem.childNodes
         for (let j in children) {
@@ -877,6 +1203,8 @@ class BrianMechanismSimulator {
         canvas.className = "absolute-top full-width full-height"
         elem.append(canvas);
         this.canvas = canvas
+
+
         for (let i of Object.keys(this.intervals)) {
             clearInterval(this.intervals[i])
         }
@@ -895,7 +1223,7 @@ class BrianMechanismSimulator {
         scene.clearColor = new BABYLON.Color3(0.8, 0.8, 0.8);
        
         this.createMaterials()
-        // this.showAxis(100)
+        this.showAxis(100)
 
         switch (simulationType) {
             case "CHAINONLY":
@@ -907,12 +1235,18 @@ class BrianMechanismSimulator {
                 break
             case "PARALLELBRAKE":
                 this.initialCamRadius = 300
-                this.initParallelBrake(true)
+                this.initParallelBrake()
                 break
             case "SERIESBRAKE":
                 this.initialCamRadius = 200
                 this.initSeriesBrake(true)
                 break
+            case "JOINTCONCEPT":
+                this.jointconcept();
+                break;
+            case "WHEELEDWALKER":
+                this.wheeledwalker();
+                break;
         }
         this.createCamera(scene)
         var renderLoop = function () {

@@ -33,6 +33,9 @@
               {% endif %}
             </div>
         </q-page>
+        <q-page class="flex flex-center" id="page1.1">
+            {% include feature_row id="compound_robots" type="center" %}
+        </q-page>
         <q-page class="flex flex-center" id="page2">
             {% include feature_row id="braking_mechanism" type="center" %}
         </q-page>
@@ -79,6 +82,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.18.10/dist/quasar.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babylonjs/5.3.0/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
     <script src="{{ site.url }}{{ site.baseurl }}//assets/js/brianmechanism.js"></script>
     <script>
       var brianmechanism = new BrianMechanismSimulator()
@@ -86,12 +90,12 @@
   el: '#q-app',
   data: function () {
     return {
-      simTypes: ["CHAINONLY", "BRAKINGMECHANISM", "PARALLELBRAKE","SERIESBRAKE"]
+      simTypes: ["WHEELEDWALKER", "JOINTCONCEPT", "PARALLELBRAKE","SERIESBRAKE"]
     }
   },
   created: function() {
       setTimeout(()=>{
-        brianmechanism.init(document.getElementById("canvasParent"), "CHAINONLY")
+        brianmechanism.init(document.getElementById("canvasParent"), "WHEELEDWALKER")
         // BrianMechanism1.init(document.getElementById("singlebrakeonly"), "CHAINONLY")
         // BrianMechanism2.init(document.getElementById("doubleverticalbrake"), "CHAINONLY")
 

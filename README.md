@@ -8,3 +8,7 @@ bundle clean --force
 jekyll serve
 ```
 =======
+
+## Fixes
+
+[](https://frhyme.github.io/others/jekyll_serve_not_work/)

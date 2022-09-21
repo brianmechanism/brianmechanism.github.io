@@ -15,3 +15,5 @@ node_modules
 npm-debug.log*
 vendor/bundle
 ssq/
+todo.md
+notes.md
