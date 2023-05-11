@@ -1,5 +1,5 @@
 ---
-layout: posts 
+layout: sims 
 author: Brian Onang'o 
 navBar: navBarNoHero 
 title: Brian Linkage (4 bar Leg Mechanism) 
@@ -10,6 +10,8 @@ siteTitle: Brian-Linkage
 subTitle: Brian Linkage
 subSubTitle: A 4 Bar Plantigrade Walking Mechanism
 youtube: brianlinkage
+permalink: /robots/brian-linkage.html
+
 ---
 
 A 4-bar constant velocity and straight line walking mechanism for use in the design of low cost long range linear motion mechanisms and Cartesian/Linear Compound Robots.
