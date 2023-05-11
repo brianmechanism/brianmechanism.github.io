@@ -1,0 +1,237 @@
+---
+layout: index
+title: Home
+---
+
+
+
+<!-- One -->
+<section id="one" class="spotlight style1 bottom">
+	{% include aboutSummary.html %}
+	<a href="#two" class="goto-next scrolly">Next</a>
+</section>
+
+<!-- Two -->
+<section id="two" class="spotlight style2 right">
+	<span class="image fit main"><img src="{{site.baseurl}}assets/img/BM/WACAR-OSG.png" alt="" /></span>
+	<div class="content">
+		{% assign post = site.posts | where: "siteTitle", "WaCaR-OSG" | first %}
+		{% if post %}
+		<header>
+			{% if post.subTitle %}
+			<h2>{{ post.subTitle }}</h2>
+			{% else %}
+			<h2>{{ post.title }}</h2>
+			{% endif %}
+			{% if post.subSubTitle %}
+			<p>{{ post.subSubTitle }}</p>
+			{% else %}
+			<p>{{ post.subSubTitle }}</p>
+			{% endif %}
+		</header>
+		{% assign paragraphs = post.content | newline_to_br | split: '<br />' %}
+		{% assign excerpt = "" %}
+		{% for p in paragraphs %}
+		{% if forloop.index <= site.numParagraphsSummary %} {% assign excerpt=excerpt | append: p %} {% endif %} {% endfor %} <p
+			class="mb-4 text-justify">{{ excerpt }}</p>
+			<ul class="actions">
+
+				{% if post.youtube %}
+				<li><a href="https://www.youtube.com/watch?v={{post.post.youtube}}" target="_blank"
+						class="button brands"><span class="label"><i class="fab fa-youtube"></i> See in Action</span></a>
+						
+				</li>
+				{% endif %}
+				<li><a href="{{site.baseurl}}{{post.url | remove_first: '/' }}" target="_blank" class="button">Learn More</a></li>
+			</ul>
+			{% endif %}
+	</div>
+	<a href="#three" class="goto-next scrolly">Next</a>
+</section>
+
+<!-- Three -->
+<section id="three" class="spotlight style3 left">
+	<span class="image fit main bottom"><img src="{{site.baseurl}}assets/img/BM/WACAR-USG-RIGHT.png" alt="" /></span>
+	<div class="content">
+		{% assign post = site.posts | where: "siteTitle", "WaCaR-USG" | first %}
+		{% if post %}
+		<header>
+			{% if post.subTitle %}
+			<h2>{{ post.subTitle }}</h2>
+			{% else %}
+			<h2>{{ post.title }}</h2>
+			{% endif %}
+			{% if post.subSubTitle %}
+			<p>{{ post.subSubTitle }}</p>
+			{% else %}
+			<p>{{ post.subSubTitle }}</p>
+			{% endif %}
+		</header>
+		{% assign paragraphs = post.content | newline_to_br | split: '<br />' %}
+		{% assign excerpt = "" %}
+		{% for p in paragraphs %}
+		{% if forloop.index <= site.numParagraphsSummary %} {% assign excerpt=excerpt | append: p %} {% endif %} {% endfor %} <p
+			class="mb-4 text-justify">{{ excerpt }}</p>
+			<ul class="actions">
+
+				{% if post.youtube %}
+				<li><a href="https://www.youtube.com/watch?v={{post.post.youtube}}" target="_blank"
+						class="button brands"><span class="label"><i class="fab fa-youtube"></i> See in Action</span></a>
+				</li>
+				{% endif %}
+				<li><a href="{{site.baseurl}}{{post.url | remove_first: '/' }}" target="_blank" class="button">Learn More</a></li>
+			</ul>
+			{% endif %}
+	</div>
+	<a href="#four" class="goto-next scrolly">Next</a>
+</section>
+
+<!-- Four -->
+<!-- <section id="four" class="wrapper style1 special fade-up"> -->
+<section id="four" class="spotlight style3 right">
+	<span class="image fit main"><img src="{{site.baseurl}}assets/img/BM/WACAR-ULG-LEFT.png" alt="" /></span>
+	<div class="content">
+		{% assign post = site.posts | where: "siteTitle", "WaCaR-ULG" | first %}
+		{% if post %}
+		<header>
+			{% if post.subTitle %}
+			<h2>{{ post.subTitle }}</h2>
+			{% else %}
+			<h2>{{ post.title }}</h2>
+			{% endif %}
+			{% if post.subSubTitle %}
+			<p>{{ post.subSubTitle }}</p>
+			{% else %}
+			<p>{{ post.subSubTitle }}</p>
+			{% endif %}
+		</header>
+		{% assign paragraphs = post.content | newline_to_br | split: '<br />' %}
+		{% assign excerpt = "" %}
+		{% for p in paragraphs %}
+		{% if forloop.index <= site.numParagraphsSummary %} {% assign excerpt=excerpt | append: p %} {% endif %} {% endfor %} <p
+			class="mb-4 text-justify">{{ excerpt }}</p>
+			<ul class="actions">
+
+				{% if post.youtube %}
+				<li><a href="https://www.youtube.com/watch?v={{post.post.youtube}}" target="_blank"
+						class="button brands"><span class="label"><i class="fab fa-youtube"></i> See in Action</span></a>
+				</li>
+				{% endif %}
+				<li><a href="{{site.baseurl}}{{post.url | remove_first: '/' }}" target="_blank" class="button">Learn More</a></li>
+			</ul>
+			{% endif %}
+	</div>
+	<a href="#five" class="goto-next scrolly">Next</a>
+</section>
+
+<!-- Five -->
+<section id="five" class="spotlight style3 left">
+	<span class="image fit main bottom"><img src="{{site.baseurl}}assets/img/BM/WACAR-USR.png" alt="" /></span>
+	<div class="content">
+		{% assign post = site.posts | where: "siteTitle", "WaCaR-USR" | first %}
+		{% if post %}
+		<header>
+			{% if post.subTitle %}
+			<h2>{{ post.subTitle }}</h2>
+			{% else %}
+			<h2>{{ post.title }}</h2>
+			{% endif %}
+			{% if post.subSubTitle %}
+			<p>{{ post.subSubTitle }}</p>
+			{% else %}
+			<p>{{ post.subSubTitle }}</p>
+			{% endif %}
+		</header>
+		{% assign paragraphs = post.content | newline_to_br | split: '<br />' %}
+		{% assign excerpt = "" %}
+		{% for p in paragraphs %}
+		{% if forloop.index <= site.numParagraphsSummary %} {% assign excerpt=excerpt | append: p %} {% endif %} {% endfor %} <p
+			class="mb-4 text-justify">{{ excerpt }}</p>
+			<ul class="actions">
+
+				{% if post.youtube %}
+				<li><a href="https://www.youtube.com/watch?v={{post.post.youtube}}" target="_blank"
+						class="button brands"><span class="label"><i class="fab fa-youtube"></i> See in Action</span></a>
+				</li>
+				{% endif %}
+				<li><a href="{{site.baseurl}}{{post.url | remove_first: '/' }}" target="_blank" class="button">Learn More</a></li>
+			</ul>
+			{% endif %}
+	</div>
+	<a href="#six" class="goto-next scrolly">Next</a>
+</section>
+<section id="six" class="spotlight style3 right">
+	<span class="image fit main"><img src="{{site.baseurl}}assets/img/BM/WACAR-USF.png" alt="" /></span>
+	<div class="content">
+		{% assign post = site.posts | where: "siteTitle", "WaCaR-USF" | first %}
+		{% if post %}
+		<header>
+			{% if post.subTitle %}
+			<h2>{{ post.subTitle }}</h2>
+			{% else %}
+			<h2>{{ post.title }}</h2>
+			{% endif %}
+			{% if post.subSubTitle %}
+			<p>{{ post.subSubTitle }}</p>
+			{% else %}
+			<p>{{ post.subSubTitle }}</p>
+			{% endif %}
+		</header>
+		{% assign paragraphs = post.content | newline_to_br | split: '<br />' %}
+		{% assign excerpt = "" %}
+		{% for p in paragraphs %}
+		{% if forloop.index <= site.numParagraphsSummary %} {% assign excerpt=excerpt | append: p %} {% endif %} {% endfor %} <p
+			class="mb-4 text-justify">{{ excerpt }}</p>
+			<ul class="actions">
+
+				{% if post.youtube %}
+				<li><a href="https://www.youtube.com/watch?v={{post.post.youtube}}" target="_blank"
+						class="button brands"><span class="label"><i class="fab fa-youtube"></i> See in Action</span></a>
+				</li>
+				{% endif %}
+				<li><a href="{{site.baseurl}}{{post.url | remove_first: '/' }}" target="_blank" class="button">Learn More</a></li>
+			</ul>
+			{% endif %}
+	</div>
+	<a href="#seven" class="goto-next scrolly">Next</a>
+</section>
+<section id="seven" class="spotlight style3 left">
+	<span class="image fit main bottom"><img src="{{site.baseurl}}assets/img/BM/WACAR-USR.png" alt="" /></span>
+	<div class="content">
+		{% assign post = site.posts | where: "siteTitle", "Brian-Linkage" | first %}
+		{% if post %}
+		<header>
+			{% if post.subTitle %}
+			<h2>{{ post.subTitle }}</h2>
+			{% else %}
+			<h2>{{ post.title }}</h2>
+			{% endif %}
+			{% if post.subSubTitle %}
+			<p>{{ post.subSubTitle }}</p>
+			{% else %}
+			<p>{{ post.subSubTitle }}</p>
+			{% endif %}
+		</header>
+		{% assign paragraphs = post.content | newline_to_br | split: '<br />' %}
+		{% assign excerpt = "" %}
+		{% for p in paragraphs %}
+		{% if forloop.index <= site.numParagraphsSummary %} {% assign excerpt=excerpt | append: p %} {% endif %} {% endfor %} <p
+			class="mb-4 text-justify">{{ excerpt }}</p>
+			<ul class="actions">
+
+				{% if post.youtube %}
+				<li><a href="https://www.youtube.com/watch?v={{post.post.youtube}}" target="_blank"
+						class="button brands"><span class="label"><i class="fab fa-youtube"></i> See in Action</span></a>
+				</li>
+				{% endif %}
+				<li><a href="{{site.baseurl}}{{post.url | remove_first: '/' }}" target="_blank" class="button">Learn More</a></li>
+			</ul>
+			{% endif %}
+	</div>
+</section>
+
+<section id="#eight" class="wrapper style2 special fade">
+	{% include contactSummary.html %}
+</section>
+
+<!-- Footer -->

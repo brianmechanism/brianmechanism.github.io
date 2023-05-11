@@ -1,0 +1,30 @@
+<span class="image fit main"><img src="{{site.baseurl}}assets/img/BM/WACAR-OSG.png" alt="" /></span>
+	<div class="content">
+		<div class="container">
+			<div class="row">
+				<div class="col-4 col-12-medium">
+					<header>
+						<h2>FRC Team 840</h2>
+						<p>Years active: 2001-2015, 2018-present</p>
+					</header>
+                    Insert an image here....
+				</div>
+				<div class="col-5 col-12-medium">
+                    {% assign post = site.posts | where: "title", "About" | first %}
+                    {% if post %}
+                    {% assign paragraphs = post.content | newline_to_br | split: '<br />' %}
+                    {% assign excerpt = "" %}
+                    {% for p in paragraphs %}
+                    {% if forloop.index <= 2 %}
+                    {% assign excerpt = excerpt | append: p %}
+                    {% endif %}
+                    {% endfor %}
+                    <p class="mb-4 text-justify">{{ excerpt }}</p>
+                    {% endif %}
+				</div>
+				<ul class="actions col-3 col-12-medium" style="justify-content: center;">
+					<li><a href="{{ site.baseurl }}about.html" class="button">Learn More</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>

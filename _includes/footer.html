@@ -1,0 +1,33 @@
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="https://www.instagram.com/aragonrobotics/" class="icon brands fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+        <li><a href="https://www.youtube.com/channel/UCYO09eW87PJUZQRtgl7l7RQ" class="icon brands fa-youtube" target="_blank"><span class="label">Youtube</span></a></li>
+        <li><a href="mailto:aragon.robotics.team@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>
+            Copyright © 
+        {% assign currentYear = 'now' | date: '%Y' %}
+        {% if currentYear == site.startYear %}
+        {{ site.startYear }} <a class="border-bottom" href="{{ site.baseurl }}#">{{ site.owner}}</a>
+        {% else %}
+        {{ site.startYear }}-{{ 'now' | date: "%Y" }} <a class="border-bottom" href="{{ site.baseurl }}#">{{ site.owner}}</a>
+        {% endif %}
+        </li>
+    </ul>
+</footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

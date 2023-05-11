@@ -1,0 +1,58 @@
+<header id="header">
+    <img class="logo" id="logo" src="{{ site.baseurl }}assets/img/logo/{{ site.logo }}" alt="Logo">
+    <nav id="nav">
+        <ul>
+            {% unless page.title == "Home" %}
+            <li><a href="{{ site.baseurl }}index.html">Home</a></li>
+            {% else %}
+            <li><a href="{{ site.baseurl }}index.html" class="active">Home</a></li>
+            {% endunless %}
+            {% for pager in site.navPages %}
+            {% assign target_url = "/" | append: pager[1] %}
+            {% capture page_url %}{{ page.url }}.html{% endcapture %}
+            {% if target_url == page.url or target_url == page_url %}
+            <li><a href="{{ site.baseurl }}{{ pager[1] }}" class="active">{{ pager[0] | capitalize }}</a></li>
+            {% else %}
+            {% if pager[1] contains '.' %}
+            <li><a href="{{ site.baseurl }}{{ pager[1] }}">{{ pager[0] | capitalize }}</a></li>
+            {% else %}
+            <li>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ pager[0] | capitalize }}</a>
+                <ul>
+                    {% for subpage in pager[1] %}
+                    {% assign subtarget_url = "/" | append: subpage[1] %}
+                    {% capture subpage_url %}{{ page.url }}.html{% endcapture %}
+                    {% if subtarget_url == page.url or subtarget_url == subpage_url %}
+                    <li><a href="{{ site.baseurl }}{{ subpage[1] }}" class="active">{{ subpage[0] | capitalize }} </li>
+                    {% else %}
+                    <li> <a href="{{ site.baseurl }}{{ subpage[1] }}">{{ subpage[0] | capitalize }} </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+
+            <!-- <li>
+                <a href="about.html">About</a>
+                <ul>
+                    <li><a href="about.html">Aragon Robotics</a></li>
+                    <li><a href="frc-840.html">FRC 840</a></li>
+                    <li><a href="ftc-4345.html">FTC 4345</a></li>
+                    <li><a href="business.html">Business Team</a></li>
+                    <li><a href="mentors.html">Mentors</a></li>
+                </ul>
+            </li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="gallery.html">Outreach</a></li>
+            <li>
+                <a>Connect</a>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="support.html">Support Us</a></li>
+                </ul>
+            </li> -->
+        </ul>
+    </nav>
+</header>

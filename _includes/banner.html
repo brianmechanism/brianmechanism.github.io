@@ -1,0 +1,19 @@
+<section id="banner">
+    <div class="content">
+        <header>
+            <h2>{{site.title}}</h2>
+            <p>{{ site.shortDescription | replace: "\n", "<br />" }}</p>
+            <p>
+            <ul class="actions col-3 col-12-medium" style="justify-content: center;">
+                {% for pager in site.bannerLinks %}
+                {% assign target_url = "/" | append: pager[1] %}
+                {% capture page_url %}{{  pager[0] }}.html{% endcapture %}
+                <li><a href="{{ site.baseurl }}{{ page_url }}" class="button">{{ pager[0] | capitalize }}</a></li>
+                {% endfor %}
+            </ul>
+            </p>
+        </header>
+        <span class="image"><img src="assets/img/BM/WACAR-OSG.png" alt="" /></span>
+    </div>
+    <a href="#one" class="goto-next scrolly">Next</a>
+</section>
