@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ site.title }}</title>
+    <meta name="description" content="{{ site.name }}'s Résumé">
+    <meta name="author" content="{{ site.name }} @{{ site.twitter }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="{{ site.baseurl }}assets/cv/css/base.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}assets/cv/css/skeleton.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}assets/cv/css/layout.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="{{ site.baseurl }}assets/cv/img/favicon.ico">
+    <!-- <link rel="apple-touch-icon" href="static/img/me-icon-57.png"> -->
+    <!-- <link rel="apple-touch-icon" sizes="72x72" href="static/img/me-icon-72.png"> -->
+    <!-- <link rel="apple-touch-icon" sizes="114x114" href="static/img/me-icon-114.png"> -->
+    <!-- static/img/profile.png -->
+</head>
+<body>
+<div class="container">
+    <header class="three columns">
+        <img src="{{ site.baseurl }}{{page.profilephoto}}" class="me">
+        <h1>{{ page.author }}</h1>
+        <article>
+            <header>
+                <h1>CONTACT</h1>
+            </header>
+        </article>
+        <p>
+            <!-- <a href="{{ page.tel }}">{{ page.tel }}</a>
+            <a href="{{ page.tel }}">{{ page.tel }}</a> -->
+            {% for tel in page.tel %}
+                <a href="tel:{{ tel }}">{{ tel }}</a>
+            {% endfor %}
+        </p>
+       
+        <!-- <address>
+            <a href="{{ site.google_maps }}">
+                {{ site.address.street }}<br/>
+                {{ site.address.postcode }}<br/>
+                {{ site.address.city }}<br/>
+                {{ site.address.country }}<br/>                
+            </a>
+        </address> -->
+        <p>
+            {% for website in page.website %}
+            <a href="http://{{website }}"><i class="fa fa-globe">  {{ website }}</i></a><br/>
+            {% endfor %}
+        </p>
+        <p>
+            {% for email in page.email %}
+            <a href="mailto:{{ email }}"><i class="fa fa-envelope"> {{ email }}</i></a><br/>
+            {% endfor %}
+
+            {% for github in page.github %}
+            <a href="https://github.com/{{ github }}"><i class="fa fa-github"> {{ github }}</i></a><br/>
+            {% endfor %}
+            {% for twitter in page.twitter %}
+            <a href="https://twitter.com/{{ twitter }}"><i class="fa fa-twitter"> {{ twitter }}</i></a><br/>
+            {% endfor %}
+            {% for linkedin in page.linkedin %}
+            <a href="https://www.linkedin.com/in/{{ linkedin }}"><i class="fa fa-linkedin"> LinkedIn</i></a><br/>
+            {% endfor %}
+        </p>
+       
+        <article>
+            <header>
+                <h1>LANGUAGE SKILLS</h1>
+                <p>
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                    &nbsp;&nbsp;<em>C/C++ & Objective-C</em>
+                </p>
+                <p>
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+                    &nbsp;&nbsp;<em>Java</em>, <em>Python</em>, <em>PHP</em> &amp; <em>Git</em>
+                </p>
+                <p>
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>
+                    &nbsp;&nbsp;<em>HTML/CSS3</em> &amp; <em>Javascript</em>
+                </p>
+            </header>
+        </article>
+    </header> 
+    
+    <div class="thirteen columns clearfix">
+
+        {{ content }}
+
+    <footer class="thirteen columns">
+        
+    </footer>
+    </div>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '{{ site.google_analytics }}', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
