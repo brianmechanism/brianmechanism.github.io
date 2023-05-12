@@ -111,3 +111,4 @@ done
 
 mkdir -p ../../assets/cv/cvPhotos
 rsync -a cvPhotos/ ../../assets/cv/cvPhotos/
+rm -rf cvData
