@@ -1,0 +1,52 @@
+---
+layout: lists
+title: Contact Us
+permalink: /contact
+---
+
+
+
+<!-- Main -->
+<div id="main" class="wrapper style1">
+    <div class="container">
+        <header class="major">
+            <h2>Contact Us</h2>
+            <p>Email: {{site.Contact.Email}}</p>
+        </header>
+
+        <!-- Form -->
+            <section id="contact">
+                <form id="email-form" method="post" action="https://formsubmit.co/{% if jekyll.environment == \"production\" %}{{site.SiteConfig.formProd}}{% else %}{{site.SiteConfig.formDev}}{% endif %}">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_next" value="{% if jekyll.environment == \"production\" %}{{site.SiteConfig.domainProduction}}{% else %}{{site.SiteConfig.domainDev}}{% endif %}{{site.baseurl}}form-submit.html">
+                    <input type="hidden" name="_template" value="table">
+                <!--<input type="hidden" name="_autoresponse" value="">-->
+                    <input type="hidden" name="_subject" value="MGOC - Contact for Query">
+                    <input type="hidden" name="_cc" value="surgbc@gmail.com">
+                    <div class="row gtr-uniform gtr-50">
+                        <div class="col-35 col-12-xsmall">
+                            <input type="text" name="First Name" id="first_name" value="" placeholder="First Name" />
+                        </div>
+                        <div class="col-35 col-12-xsmall">
+                            <input type="text" name="Last Name" id="last_name" value="" placeholder="Last Name" />
+                        </div>
+                        <div class="col-5 col-12-xsmall">
+                            <input type="email" name="Email" id="email" value="" placeholder="Your Email" />
+                        </div>
+                        <div class="col-12 col-12-xsmall">
+                            <input type="text" name="Subject" id="subject" value="" placeholder="Subject" />
+                        </div>
+                        <div class="col-12">
+                            <textarea name="Message" id="message" placeholder="Enter your message" rows="6"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <ul class="actions">
+                                <li><input type="submit" value="Send Message" class="primary" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+    </div>
+</div>
