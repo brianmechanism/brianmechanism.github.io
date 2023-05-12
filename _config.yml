@@ -28,6 +28,13 @@ shortDescription: >- # add \n at the end of each line
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
+collections:
+  pages:
+    output: true
+    # permalink: /:basename:output_ext
+    permalink: /{{ page.name  }}
+
+
 
 startYear: "2018"
 title: Brian Mechanisms
@@ -39,14 +46,12 @@ bannerLinks:
   simulator: simulator
 
 navPages:
-  about: about.html
-  sermons: sermons.html
-  beliefs: beliefs.html
-  articles:
-    categories: categories.html
-    authors: authors.html
-  files: files.html
-  events: events.html
+  robots: index.html#two
+  papers: papers.html
+  software: software.html
+  about:
+    about us: about.html
+    team: team.html
   contacts: contact.html
 
 logo: logo.png
@@ -54,12 +59,20 @@ logo: logo.png
 ## Start Contacts:
 Contact:
   Telephone: "+254722329129"
-  Email: media@vegministry.org
-  Youtube: VegMinistry
+  Email: media@cseco.co.ke
+  Youtube: brianmechanisms
+  Linkedin: "brian-mechanisms-robotics"
+  Github: brianmechanisms
   Whatsapp: "+254706662011"
   LocationCoordinates: -0.537426,34.716525
   LocationName: Oyugis, Kobala
 ## EOContacts
+SiteConfig:
+    analytics: G-G3XQGQ1WY2
+    formDev: 119e219f5eae2f87748e49c53fd7ea33
+    formProd: 119e219f5eae2f87748e49c53fd7ea33
+    domainDev: http://ubuntu.cseco.co.ke:4000
+    domainProduction: https://vegministry.org
 numParagraphsSummary: 2
 # Build settings
 theme: minima

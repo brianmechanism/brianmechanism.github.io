@@ -1,8 +1,9 @@
 <footer id="footer">
     <ul class="icons">
-        <li><a href="https://www.instagram.com/aragonrobotics/" class="icon brands fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
-        <li><a href="https://www.youtube.com/channel/UCYO09eW87PJUZQRtgl7l7RQ" class="icon brands fa-youtube" target="_blank"><span class="label">Youtube</span></a></li>
-        <li><a href="mailto:aragon.robotics.team@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        <li><a href="https://www.linkedin.com/company/{{site.Contact.Linkedin}}" class="icon brands fa-linkedin-in" target="_blank"><span class="label">Instagram</span></a></li>
+        <li><a href="https://github.com/{{site.Contact.Github}}" class="icon brands fa-github" target="_blank"><span class="label">Instagram</span></a></li>
+        <li><a href="https://www.youtube.com/@{{site.Contact.Youtube}}" class="icon brands fa-youtube" target="_blank"><span class="label">Youtube</span></a></li>
+        <li><a href="mailto:{{site.Contact.Email}}" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
     </ul>
     <ul class="copyright">
         <li>
@@ -20,6 +21,15 @@
 </div>
 
 <!-- Scripts -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{site.SiteConfig.analytics}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', "{{site.SiteConfig.analytics}}");
+</script>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
 <script src="assets/js/jquery.dropotron.min.js"></script>
