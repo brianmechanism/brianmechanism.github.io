@@ -1,17 +1,17 @@
---2023-05-12 15:40:36--  https://docs.google.com/spreadsheets/d/15gWBr8MMB1omF4vLet04_iasccyYeAFNuH8IiFVYm7M/export?format=csv&gid=217222587
+--2023-05-12 16:00:49--  https://docs.google.com/spreadsheets/d/15gWBr8MMB1omF4vLet04_iasccyYeAFNuH8IiFVYm7M/export?format=csv&gid=217222587
 Resolving docs.google.com (docs.google.com)... 142.250.186.78, 2a00:1450:4001:828::200e
 Connecting to docs.google.com (docs.google.com)|142.250.186.78|:443... connected.
 HTTP request sent, awaiting response... 307 Temporary Redirect
-Location: https://doc-14-74-sheets.googleusercontent.com/export/n4743ueaoiib6is67cgugk097k/su25krqh2pcfq4oh7rhcs9jfsk/1683895235000/107432507607564961743/*/15gWBr8MMB1omF4vLet04_iasccyYeAFNuH8IiFVYm7M?format=csv&gid=217222587 [following]
+Location: https://doc-14-74-sheets.googleusercontent.com/export/n4743ueaoiib6is67cgugk097k/qmgfl7smkhv4hu195boq81pd4k/1683896450000/107432507607564961743/*/15gWBr8MMB1omF4vLet04_iasccyYeAFNuH8IiFVYm7M?format=csv&gid=217222587 [following]
 Warning: wildcards not supported in HTTP.
---2023-05-12 15:40:36--  https://doc-14-74-sheets.googleusercontent.com/export/n4743ueaoiib6is67cgugk097k/su25krqh2pcfq4oh7rhcs9jfsk/1683895235000/107432507607564961743/*/15gWBr8MMB1omF4vLet04_iasccyYeAFNuH8IiFVYm7M?format=csv&gid=217222587
-Resolving doc-14-74-sheets.googleusercontent.com (doc-14-74-sheets.googleusercontent.com)... 142.250.179.129, 2a00:1450:4001:82a::2001
+--2023-05-12 16:00:50--  https://doc-14-74-sheets.googleusercontent.com/export/n4743ueaoiib6is67cgugk097k/qmgfl7smkhv4hu195boq81pd4k/1683896450000/107432507607564961743/*/15gWBr8MMB1omF4vLet04_iasccyYeAFNuH8IiFVYm7M?format=csv&gid=217222587
+Resolving doc-14-74-sheets.googleusercontent.com (doc-14-74-sheets.googleusercontent.com)... 142.250.179.129, 2a00:1450:400e:801::2001
 Connecting to doc-14-74-sheets.googleusercontent.com (doc-14-74-sheets.googleusercontent.com)|142.250.179.129|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: unspecified [text/csv]
 Saving to: ‘./cvData/https:____github.com__Surgbc__cv_data/csvs/15gWBr8MMB1omF4vLet04_iasccyYeAFNuH8IiFVYm7M217222587.csv’
 
-     0K                                                        15.7M=0s
+     0K                                                        18.3M=0s
 
-2023-05-12 15:40:36 (15.7 MB/s) - ‘./cvData/https:____github.com__Surgbc__cv_data/csvs/15gWBr8MMB1omF4vLet04_iasccyYeAFNuH8IiFVYm7M217222587.csv’ saved [67]
+2023-05-12 16:00:50 (18.3 MB/s) - ‘./cvData/https:____github.com__Surgbc__cv_data/csvs/15gWBr8MMB1omF4vLet04_iasccyYeAFNuH8IiFVYm7M217222587.csv’ saved [67]
 
