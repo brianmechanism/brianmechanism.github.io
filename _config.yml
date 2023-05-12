@@ -23,8 +23,7 @@ email: media@cseco.co.ke
 description: >- # this means to ignore newlines until "baseurl:"
   A robotics company in Kenya... etc.
 shortDescription: >- # add \n at the end of each line
-  Get started with the world's cheapest robots for\n
-  Agriculture, Construction and Manufacturing.
+  Revolutionizing Robotics for\n Agriculture, Manufacturing, and Construction.
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
