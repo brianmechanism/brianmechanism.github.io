@@ -196,7 +196,7 @@ title: Home
 <section id="seven" class="spotlight style3 left">
 	<span class="image fit main bottom"><img src="{{site.baseurl}}assets/img/BM/WACAR-USR.png" alt="" /></span>
 	<div class="content">
-		{% assign post = site.posts | where: "siteTitle", "Brian-Linkage" | first %}
+		{% assign post = site.posts | where: "siteTitle", "ULMW" | first %}
 		{% if post %}
 		<header>
 			{% if post.subTitle %}
@@ -227,8 +227,42 @@ title: Home
 			{% endif %}
 	</div>
 </section>
+<section id="eight" class="spotlight style3 right">
+	<span class="image fit main"><img src="{{site.baseurl}}assets/img/BM/WACAR-USF.png" alt="" /></span>
+	<div class="content">
+		{% assign post = site.posts | where: "siteTitle", "Rimless-Wheel" | first %}
+		{% if post %}
+		<header>
+			{% if post.subTitle %}
+			<h2>{{ post.subTitle }}</h2>
+			{% else %}
+			<h2>{{ post.title }}</h2>
+			{% endif %}
+			{% if post.subSubTitle %}
+			<p>{{ post.subSubTitle }}</p>
+			{% else %}
+			<p>{{ post.subSubTitle }}</p>
+			{% endif %}
+		</header>
+		{% assign paragraphs = post.content | newline_to_br | split: '<br />' %}
+		{% assign excerpt = "" %}
+		{% for p in paragraphs %}
+		{% if forloop.index <= site.numParagraphsSummary %} {% assign excerpt=excerpt | append: p %} {% endif %} {% endfor %} <p
+			class="mb-4 text-justify">{{ excerpt }}</p>
+			<ul class="actions">
 
-<section id="#eight" class="wrapper style2 special fade">
+				{% if post.youtube %}
+				<li><a href="https://www.youtube.com/watch?v={{post.youtube}}" target="_blank"
+						class="button brands"><span class="label"><i class="fab fa-youtube"></i> See in Action</span></a>
+				</li>
+				{% endif %}
+				<li><a href="{{site.baseurl}}{{post.url | remove_first: '/' }}" target="_blank" class="button">Learn More</a></li>
+			</ul>
+			{% endif %}
+	</div>
+	<a href="#nine" class="goto-next scrolly">Next</a>
+</section>
+<section id="#eightf" class="wrapper style2 special fade">
 	{% include contactSummary.html %}
 </section>
 

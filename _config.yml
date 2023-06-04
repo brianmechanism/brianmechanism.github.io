@@ -18,10 +18,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Brian Mechanisms
+title: Brian Mechanisms Robotics
 email: media@cseco.co.ke
 description: >- # this means to ignore newlines until "baseurl:"
-  A robotics company in Kenya... etc.
+  A robotics company in Kenya revolutionizing robotics for agricultural, manufacturing, construction and education; producing WaCaR walking robots.
 shortDescription: >- # add \n at the end of each line
   Revolutionizing Robotics for\n Agriculture, Manufacturing, and Construction.
 baseurl: "/" # the subpath of your site, e.g. /blog
@@ -36,8 +36,7 @@ collections:
 
 
 startYear: "2018"
-title: Brian Mechanisms
-owner: Brian Mechanisms
+owner: Brian Mechanisms Robotics
 
 bannerLinks:
   robots: robots
