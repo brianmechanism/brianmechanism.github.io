@@ -14,4 +14,4 @@ permalink: /robots/rimless-wheel.html
 simName: mechanism-rimlessWheel-1
 ---
 
-A rimless wheel having a constant pressure angle. The amplitude of the arc traced by the axle remains constant and independent of the leg length. The step length is also constant. Theoretically, then the robot’s height is not limited by the leg length.
+A rimless wheel having a constant pressure angle. The amplitude of the arc traced by the axle remains constant and independent of the leg length. The step length is also constant. Theoretically, then the robot’s height is not limited by the leg length
